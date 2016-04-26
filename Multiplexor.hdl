@@ -1,0 +1,10 @@
+CHIP Multiplexor {
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    Not(a=c, out=notc);
+    And(a=a, b=notc, out=and1);
+    And(a=b, b=c, out=and2);
+    Or(a=and1, b=and2, out=out);
+}
